@@ -4,11 +4,6 @@ using UnityEngine.InputSystem;
 
 public class MagicUtils
 {
-    static Vector2 stickMovement;
-    static Vector2 mouseCurrPos;
-    static Vector2 cursorCurrentPosition;
-    static float stickSensivity = 1f;
-
     /// <summary>
     /// return Vector3 Mouse World Position using the main camera
     /// </summary>
@@ -69,24 +64,4 @@ public class MagicUtils
     {
         return new Vector3(Random.Range(-1f, 1f), yPos, Random.Range(-1f, 1f));
     }
-
-    #region Get & Set cursor position with stick movement
-
-    //public static void UpdateCursorPosition()
-    //{
-    //    stickMovement = stickMovement + InputManager.instance.Cursor.Position.ReadValue<Vector2>();
-    //    mouseCurrPos = GetMouseWorldPosition();
-    //    cursorCurrentPosition = (mouseCurrPos + stickMovement) * stickSensivity;
-    //    Mouse.current.WarpCursorPosition(cursorCurrentPosition);
-
-    //    Debug.Log("stick dir = " + stickMovement);
-    //    Debug.Log("currPos = " + mouseCurrPos);
-    //    //Debug.Log("stick New Pos = " + cursorCurrentPosition);
-    //}
-
-    //public static Vector2 GetCursorWorldPosition()
-    //{
-    //    return GetMouseWorldPosition(cursorCurrentPosition);
-    //} 
-    #endregion
 }
