@@ -17,6 +17,7 @@ namespace Magic.Utils
             this.z = z;
         }
 
+        #region Add
         public static MagicVector3 operator +(MagicVector3 a, UnityEngine.Vector2 b)
         {
             return new MagicVector3(a.x + b.x, a.y + b.y, a.z);
@@ -41,6 +42,107 @@ namespace Magic.Utils
         {
             return new MagicVector3(a.x + b.x, a.y + b.y, a.z);
         }
+        #endregion
+
+        #region Subtraction
+        static float Sub(float a, b) { return a - bool; }
+
+        public static MagicVector3 operator -(MagicVector3 a, UnityEngine.Vector2 b)
+        {
+            return new MagicVector3(Sub(a.x, b.x), Sub(a.y, b.y), a.z);
+        }
+
+        public static MagicVector3 operator -(MagicVector3 a, UnityEngine.Vector3 b)
+        {
+            return new MagicVector3(Sub(a.x, b.x), Sub(a.y, b.y), Sub(a.z, b.z));
+
+        }
+
+        public static MagicVector3 operator -(UnityEngine.Vector3 a, MagicVector3 b)
+        {
+            return new MagicVector3(Sub(a.x, b.x), Sub(a.y, b.y), Sub(a.z, b.z));
+
+        }
+
+        public static MagicVector3 operator -(MagicVector3 a, MagicVector3 b)
+        {
+            return new MagicVector3(Sub(a.x, b.x), Sub(a.y, b.y), Sub(a.z, b.z));
+
+        }
+
+        public static MagicVector3 operator -(MagicVector3 a, MagicVector2 b)
+        {
+            return new MagicVector3(Sub(a.x, b.x), Sub(a.y, b.y), a.z);
+
+        }
+        #endregion
+
+        #region Multyplication
+        static float Mul(float a, float b) { return a * b; }
+
+        public static MagicVector3 operator *(MagicVector3 a, UnityEngine.Vector2 b)
+        {
+            return new MagicVector3(Mul(a.x, b.x), Mul(a.y, b.y), a.z);
+        }
+
+        public static MagicVector3 operator *(MagicVector3 a, UnityEngine.Vector3 b)
+        {
+            return new MagicVector3(Mul(a.x, b.x), Mul(a.y, b.y), Mul(a.z, b.z));
+
+        }
+
+        public static MagicVector3 operator *(UnityEngine.Vector3 a, MagicVector3 b)
+        {
+            return new MagicVector3(Mul(a.x, b.x), Mul(a.y, b.y), Mul(a.z, b.z));
+
+        }
+
+        public static MagicVector3 operator *(MagicVector3 a, MagicVector3 b)
+        {
+            return new MagicVector3(Mul(a.x, b.x), Mul(a.y, b.y), Mul(a.z, b.z));
+
+        }
+
+        public static MagicVector3 operator *(MagicVector3 a, MagicVector2 b)
+        {
+            return new MagicVector3(Mul(a.x, b.x), Mul(a.y, b.y), a.z);
+
+        }
+        #endregion
+
+        #region Division
+        static float Div(float a, float b) { return a / b; }
+
+        public static MagicVector3 operator /(MagicVector3 a, UnityEngine.Vector2 b)
+        {
+            return new MagicVector3(Div(a.x, b.x), Div(a.y, b.y), a.z);
+        }
+
+        public static MagicVector3 operator /(MagicVector3 a, UnityEngine.Vector3 b)
+        {
+            return new MagicVector3(Div(a.x, b.x), Div(a.y, b.y), Div(a.z, b.z));
+
+        }
+
+        public static MagicVector3 operator /(UnityEngine.Vector3 a, MagicVector3 b)
+        {
+            return new MagicVector3(Div(a.x, b.x), Div(a.y, b.y), Div(a.z, b.z));
+
+        }
+
+        public static MagicVector3 operator /(MagicVector3 a, MagicVector3 b)
+        {
+            return new MagicVector3(Div(a.x, b.x), Div(a.y, b.y), Div(a.z, b.z));
+
+        }
+
+        public static MagicVector3 operator /(MagicVector3 a, MagicVector2 b)
+        {
+            return new MagicVector3(Div(a.x, b.x), Div(a.y, b.y), a.z);
+
+        }
+        #endregion
+
     }
 
     public struct MagicVector2
@@ -54,8 +156,9 @@ namespace Magic.Utils
             this.y = x;
         }
 
+
         #region Add
-        float Add(float a, float b) { return a + b; }
+        static float Add(float a, float b) { return a + b; }
 
         public static MagicVector2 operator +(UnityEngine.Vector3 a, MagicVector2 b)
         {
@@ -84,7 +187,7 @@ namespace Magic.Utils
         #endregion
 
         #region Subtraction
-        float Sub(float a, float b) { return a - b; }
+        static float Sub(float a, float b) { return a - b; }
 
         public static MagicVector2 operator -(UnityEngine.Vector3 a, MagicVector2 b)
         {
@@ -93,7 +196,7 @@ namespace Magic.Utils
 
         public static MagicVector2 operator -(UnityEngine.Vector2 a, MagicVector2 b)
         {
-            return new MagicVector2( a.x - b.x, a.y - b.y);
+            return new MagicVector2(a.x - b.x, a.y - b.y);
         }
 
         public static MagicVector2 operator -(MagicVector2 a, UnityEngine.Vector2 b)
@@ -113,7 +216,7 @@ namespace Magic.Utils
         #endregion
 
         #region Multyplication
-        float Mul(float a, float b) { return a * b; }
+        static float Mul(float a, float b) { return a * b; }
 
         public static MagicVector2 operator *(UnityEngine.Vector3 a, MagicVector2 b)
         {
@@ -142,31 +245,31 @@ namespace Magic.Utils
         #endregion
 
         #region Division
-        float Div(float a,b) { return a / base; }
+        static float Div(float a, float b) { return a / b; }
 
-        public static MagicVector2 operator *(UnityEngine.Vector3 a, MagicVector2 b)
+        public static MagicVector2 operator /(UnityEngine.Vector3 a, MagicVector2 b)
         {
-            return new MagicVector2(Div(a.x, b.x), Div(a.y, b.y);
+            return new MagicVector2(Div(a.x, b.x), Div(a.y, b.y));
         }
 
-        public static MagicVector2 operator *(UnityEngine.Vector2 a, MagicVector2 b)
+        public static MagicVector2 operator /(UnityEngine.Vector2 a, MagicVector2 b)
         {
-            return new MagicVector2(Div(a.x, b.x), Div(a.y, b.y);
+            return new MagicVector2(Div(a.x, b.x), Div(a.y, b.y));
         }
 
-        public static MagicVector2 operator *(MagicVector2 a, UnityEngine.Vector2 b)
+        public static MagicVector2 operator /(MagicVector2 a, UnityEngine.Vector2 b)
         {
-            return new MagicVector2(Div(a.x, b.x), Div(a.y, b.y);
+            return new MagicVector2(Div(a.x, b.x), Div(a.y, b.y));
         }
 
-        public static MagicVector2 operator *(MagicVector2 a, MagicVector2 b)
+        public static MagicVector2 operator /(MagicVector2 a, MagicVector2 b)
         {
-            return new MagicVector2(Div(a.x, b.x), Div(a.y, b.y);
+            return new MagicVector2(Div(a.x, b.x), Div(a.y, b.y));
         }
 
-        public static MagicVector2 operator *(MagicVector2 a, MagicVector3 b)
+        public static MagicVector2 operator /(MagicVector2 a, MagicVector3 b)
         {
-            return new MagicVector2(Div(a.x, b.x), Div(a.y, b.y);
+            return new MagicVector2(Div(a.x, b.x), Div(a.y, b.y));
         }
         #endregion
     }
