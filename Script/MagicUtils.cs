@@ -45,7 +45,7 @@ namespace Magic.Utils
         #endregion
 
         #region Subtraction
-        static float Sub(float a, b) { return a - bool; }
+        static float Sub(float a, float b) { return a - b; }
 
         public static MagicVector3 operator -(MagicVector3 a, UnityEngine.Vector2 b)
         {
